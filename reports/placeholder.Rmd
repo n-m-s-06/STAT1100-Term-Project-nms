@@ -1,0 +1,6 @@
+---
+title: "placeholder"
+output: html_document
+---
+
+It turns out that directories don't upload to GitHub unless they have something in them! This file is a placeholder to force the reports folder to be uploaded.
