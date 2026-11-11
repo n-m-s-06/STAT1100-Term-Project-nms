@@ -1,4 +1,5 @@
 # STAT1100-Term-Project-nms
+Team 3
 
 ## Team members:
 (add your name and Langara ID when you successfully open the project)
