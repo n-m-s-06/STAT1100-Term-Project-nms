@@ -4,7 +4,9 @@
 (add your name and Langara ID when you successfully open the project)
 
 Natalie Scarfe - LID: 100446202
+
 Darsha Fernando - LID: 100449516
+
 Angelica Asne - LID: 100435715
 
 
