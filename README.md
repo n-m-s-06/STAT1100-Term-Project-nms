@@ -1,7 +1,6 @@
 # STAT1100-Term-Project-nms
-Team 3
 
-## Team members:
+## Team 3 members:
 (add your name and Langara ID when you successfully open the project)
 
 Natalie Scarfe - LID: 100446202
