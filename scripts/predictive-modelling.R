@@ -8,9 +8,13 @@
 
 library(caret)
 library(rpart)
+library(tidyverse)
 library(rpart.plot)
+library(here)
 
-# # loading data
-# 
-# heart_url <- "https://githubusercontent.com"
-# heart_data <- read.csv(heart_url)
+# loading data
+
+heart_data <- read.csv(here("data","heart.csv"))
+heart_data <- unique(heart_data)
+
+heart_data$target <- factor(heart_data$target, levels = c(0,1), labels = c("No Disease", "Disease"))
