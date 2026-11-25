@@ -19,10 +19,19 @@ heart_data <- unique(heart_data)
 
 heart_data$target <- factor(heart_data$target, levels = c(0,1), labels = c("No Disease", "Disease"))
 
-#Data partitioning
+# TODO: clean up data (remove duplicates)
+# TODO: save data to csv file (code not necessary here, just needs to be done once)
+
+# Data partitioning
+# TODO: change this to use clean data
 
 set.seed(123)
 train_index<-createDataPartition(heart_data$target,p=0.80,list=FALSE)
 train_data<-heart_data[train_index,]
 test_data<-heart_data[-train_index,]
+
+# TODO: step 3
+
+# TODO: step 4
+
 
