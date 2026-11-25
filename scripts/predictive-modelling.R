@@ -20,7 +20,7 @@ heart_data <- unique(heart_data)
 heart_data$target <- factor(heart_data$target, levels = c(0,1), labels = c("No Disease", "Disease"))
 
 # TODO: clean up data (remove duplicates)
-# TODO: save data to csv file (code not necessary here, just needs to be done once)
+# TODO: save clean data to csv file (code unnecessary here, just needs to be done once)
 
 # Data partitioning
 # TODO: change this to use clean data
