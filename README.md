@@ -2,13 +2,13 @@
 
 ## Team 3 members:
 
-Natalie Scarfe - LID: 100446202
+Natalie Scarfe - LID: 100446202 - GitHub: n-m-s-06
 
-Darsha Fernando - LID: 100449516
+Darsha Fernando - LID: 100449516 - GitHub: WF1992-STAT
 
-Angelica Asne - LID: 100435715
+Angelica Asne - LID: 100435715 - GitHub: anobas
 
-Maya Holzhaus - LID: 100436159
+Maya Holzhaus - LID: 100436159 - GitHub: mayaholzhaus
 
 ## Things to keep in mind:
 
