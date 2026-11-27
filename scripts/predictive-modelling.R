@@ -25,7 +25,13 @@ test_data<-heart_data[-train_index,]
 
 # TODO: store train and test data as csv files
 
-# TODO: step 3
+# 10-Fold Cross-Validation
+
+cv_settings<-trainControl(method="cv",number=10)
+tuned_tree<-train(target~.,data=train_data,method="rpart",trControl=cv_settings,
+                  tuneLength=10)
+plot(tuned_tree,main="Cross-Validation Acuracy vs. Complexity Parameter(CP)")
+
 
 # TODO: step 4
 
