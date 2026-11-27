@@ -14,7 +14,7 @@ library(here)
 
 # loading data
 
-heart_data <- read.csv(here("data","heart_clean.csv"))
+heart_data <- read.csv(here("data","heart_cleaned.csv"))
 
 # Data partitioning
 
@@ -22,6 +22,8 @@ set.seed(123)
 train_index<-createDataPartition(heart_data$target,p=0.80,list=FALSE)
 train_data<-heart_data[train_index,]
 test_data<-heart_data[-train_index,]
+
+# TODO: store train and test data as csv files
 
 # TODO: step 3
 
