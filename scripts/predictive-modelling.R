@@ -22,10 +22,10 @@ train_index<-createDataPartition(heart_data$target,p=0.80,list=FALSE)
 train_data<-heart_data[train_index,]
 test_data<-heart_data[-train_index,]
 
-# Store `train` and `test` data as csv files
-
-write.csv(train_data, here("data","training_data.csv"))
-write.csv(test_data, here("data","test_data.csv"))
+# # Store `train` and `test` data as csv files
+# 
+# write.csv(train_data, here("data","training_data.csv"))
+# write.csv(test_data, here("data","test_data.csv"))
 
 # 10-Fold Cross-Validation
 
