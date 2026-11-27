@@ -25,8 +25,26 @@ test_data<-heart_data[-train_index,]
 
 # TODO: store train and test data as csv files
 
-# TODO: step 3
+# 10-Fold Cross-Validation
 
-# TODO: step 4
+cv_settings<-trainControl(method="cv",number=10)
+tuned_tree<-train(target~.,data=train_data,method="rpart",trControl=cv_settings,
+                  tuneLength=10)
+plot(tuned_tree,main="Cross-Validation Acuracy vs. Complexity Parameter(CP)")
+
+
+# Unseen Predictions and Matrix Table Evaluation
+
+predictions<-predict(tuned_tree,newdata = test_data)
+confusion_table<-table(Actual=test_data$target,Predicted=predictions)
+print("---Test Set Confusion Matrix Table---")
+print(confusion_table)
+
+correct_counts<-sum(diag(confusion_table))
+total_counts<-sum(confusion_table)
+test_accuracy<-correct_counts/total_counts
+
+cat("\nFinal Calculated Test Accuracy Rate:",round(test_accuracy*100,2), "%\n")
+
 
 
