@@ -1,9 +1,8 @@
 # =======================================
 # name: babys first R script
-# created by / date: angelica / 11/18/2026
+# created on: 11/18/2026
 # 
 # -----PLS UPDATE BELOW EVERY TIME CHANGE IS MADE------- 
-# modified last by / data:
 #========================================
 
 library(caret)
@@ -23,7 +22,10 @@ train_index<-createDataPartition(heart_data$target,p=0.80,list=FALSE)
 train_data<-heart_data[train_index,]
 test_data<-heart_data[-train_index,]
 
-# TODO: store train and test data as csv files
+# Store `train` and `test` data as csv files
+
+write.csv(train_data, here("data","training_data.csv"))
+write.csv(test_data, here("data","test_data.csv"))
 
 # 10-Fold Cross-Validation
 
