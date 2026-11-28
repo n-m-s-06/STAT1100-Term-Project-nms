@@ -7,12 +7,39 @@ author: " \n
   Angelica Asne — Langara ID: 100435715 | GitHub: anobas" 
 date: "November 26, 2026"
 output:
-  word_document: default
   html_document: default
+  word_document: default
 ---
 
 ```{r setup, include=FALSE}
 # knitr::opts_chunk$set(echo = TRUE)
 ```
+
+#Load required passages
+
+```{r}
+library(caret)
+library(rpart)
+library(tidyverse)
+library(rpart.plot)
+library(here)
+```
+#Load and clean Clinical Health Data
+
+```{r}
+heart_data <- read.csv(here("data","heart_cleaned.csv"))
+```
+
+#Balanced 80/20 Data Partitioning
+
+```{r}
+set.seed(123)
+train_index<-createDataPartition(heart_data$target,p=0.80,list=FALSE)
+train_data<-heart_data[train_index,]
+test_data<-heart_data[-train_index,]
+```
+
+
+
 
 
