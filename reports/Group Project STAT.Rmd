@@ -1,0 +1,18 @@
+---
+title: "STAT Group Project"
+author: " \n
+  Maya Holzhaus — Langara ID: 100436159 | GitHub: mayaholzhaus  \n
+  Darsha Fernando — Langara ID: 100449516 | GitHub: WF1992-STAT  \n
+  Natalie Scarfe — Langara ID: 100446202 | GitHub: n-m-s-06  \n
+  Angelica Asne — Langara ID: 100435715 | GitHub: anobas" 
+date: "November 26, 2026"
+output:
+  word_document: default
+  html_document: default
+---
+
+```{r setup, include=FALSE}
+# knitr::opts_chunk$set(echo = TRUE)
+```
+
+
