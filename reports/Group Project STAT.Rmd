@@ -7,12 +7,68 @@ author: " \n
   Angelica Asne — Langara ID: 100435715 | GitHub: anobas" 
 date: "November 26, 2026"
 output:
-  word_document: default
   html_document: default
+  word_document: default
 ---
 
 ```{r setup, include=FALSE}
 # knitr::opts_chunk$set(echo = TRUE)
 ```
+
+#Load required passages
+
+```{r}
+library(caret)
+library(rpart)
+library(tidyverse)
+library(rpart.plot)
+library(here)
+```
+#Load and clean Clinical Health Data
+
+```{r}
+heart_data <- read.csv(here("data","heart_cleaned.csv"))
+```
+
+#Balanced 80/20 Data Partitioning
+
+```{r}
+set.seed(123)
+train_index<-createDataPartition(heart_data$target,p=0.80,list=FALSE)
+train_data<-heart_data[train_index,]
+test_data<-heart_data[-train_index,]
+```
+# Store `train` and `test` data as csv files
+
+#10-Fold Cross-Validation
+
+```{r}
+cv_settings<-trainControl(method="cv",number=10)
+tuned_tree<-train(target~.,data=train_data,method="rpart",trControl=cv_settings,
+                  tuneLength=10)
+plot(tuned_tree,main="Cross-Validation Acuracy vs. Complexity Parameter(CP)")
+```
+
+#Unseen predictions and Matrix Table Evaluation
+
+```{r}
+predictions<-predict(tuned_tree,newdata = test_data)
+confusion_table<-table(Actual=test_data$target,Predicted=predictions)
+print("---Test Set Confusion Matrix Table---")
+print(confusion_table)
+```
+
+#Calculate final test accuracy rate from the table metrics
+
+```{r}
+correct_counts<-sum(diag(confusion_table))
+total_counts<-sum(confusion_table)
+test_accuracy<-correct_counts/total_counts
+cat("\nFinal Calculated Test Accuracy Rate:",round(test_accuracy*100,2), "%\n")
+```
+
+
+
+
 
 
