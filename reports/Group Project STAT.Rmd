@@ -38,6 +38,7 @@ train_index<-createDataPartition(heart_data$target,p=0.80,list=FALSE)
 train_data<-heart_data[train_index,]
 test_data<-heart_data[-train_index,]
 ```
+
 # Store `train` and `test` data as csv files
 
 #10-Fold Cross-Validation
@@ -66,6 +67,7 @@ total_counts<-sum(confusion_table)
 test_accuracy<-correct_counts/total_counts
 cat("\nFinal Calculated Test Accuracy Rate:",round(test_accuracy*100,2), "%\n")
 ```
+
 
 
 

@@ -387,9 +387,8 @@ library(here)</code></pre>
 train_index&lt;-createDataPartition(heart_data$target,p=0.80,list=FALSE)
 train_data&lt;-heart_data[train_index,]
 test_data&lt;-heart_data[-train_index,]</code></pre>
-<div id="store-train-and-test-data-as-csv-files" class="section level1">
-<h1>Store <code>train</code> and <code>test</code> data as csv
-files</h1>
+<p>&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD # Store <code>train</code> and
+<code>test</code> data as csv files</p>
 <p>#10-Fold Cross-Validation</p>
 <pre class="r"><code>cv_settings&lt;-trainControl(method=&quot;cv&quot;,number=10)
 tuned_tree&lt;-train(target~.,data=train_data,method=&quot;rpart&quot;,trControl=cv_settings,
@@ -413,7 +412,8 @@ test_accuracy&lt;-correct_counts/total_counts
 cat(&quot;\nFinal Calculated Test Accuracy Rate:&quot;,round(test_accuracy*100,2), &quot;%\n&quot;)</code></pre>
 <pre><code>## 
 ## Final Calculated Test Accuracy Rate: 76.27 %</code></pre>
-</div>
+<p>======= &gt;&gt;&gt;&gt;&gt;&gt;&gt;
+dc908272392e52ced6f99e20b272177f50e5e1b7</p>
 
 
 
